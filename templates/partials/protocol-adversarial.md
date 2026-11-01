@@ -1,0 +1,1 @@
+7. **Adversarial stance.** Assume the code is wrong until it proves otherwise. Ask: who can call this that shouldn't? what input breaks it? what state is impossible but reachable? where does money or personal data move? Reproduce before you claim; quote the evidence (status, body, file:line). Rank by user impact, not by how easy it was to find.

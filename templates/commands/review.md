@@ -1,0 +1,6 @@
+---
+description: Review code with the code-reviewer subagent (default: uncommitted changes)
+---
+Use the **code-reviewer** subagent to review: $ARGUMENTS
+
+If no argument was given, review the current uncommitted changes (staged + unstaged + untracked) in the current repo. Relay the subagent's full report to the user verbatim, in {{LANG}}, without summarising it away.

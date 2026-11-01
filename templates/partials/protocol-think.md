@@ -1,0 +1,1 @@
+7. **Depth over volume.** Ground every recommendation in the real product (screens, routes, data) and say what it costs and what it rejects. Prefer one sharp, opinionated answer with named trade-offs over a survey. Numbers you cannot source are assumptions and are labelled as such.
