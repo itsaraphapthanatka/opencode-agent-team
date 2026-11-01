@@ -1,0 +1,34 @@
+{
+  "project": "opencode-agent-team",
+  "project_root": "/Users/admin/Documents/project/opencode-agent-team",
+  "docs_dir": "/Users/admin/Documents/project/opencode-agent-team/docs",
+  "report_language": "Thai",
+  "profile": "balanced",
+  "compat_v1": true,
+  "roles": [
+    "product-manager",
+    "architect",
+    "backend-dev",
+    "test-engineer",
+    "code-reviewer",
+    "bug-triager",
+    "tech-writer"
+  ],
+  "repos": [
+    {
+      "name": "Renderer",
+      "path": "/Users/admin/Documents/project/opencode-agent-team",
+      "stack": "Python 3.14 stdlib-only (scripts/render.py 376 lines), unittest (tests/test_render.py 418 lines), templates/*.md, GitHub Actions CI",
+      "checks": ["python3 -m unittest discover -s tests"]
+    }
+  ],
+  "specifics": {
+    "backend-dev": "Stdlib-only Python, ไม่มี external deps และไม่มี pyproject/requirements — ห้ามเพิ่ม dependency โดยไม่ได้รับอนุญาต. render.py เป็น single-file CLI (argparse) อ่าน templates/ แล้วเขียน .opencode/. Logic หลัก: profile tiers (PROFILES), role sets (CODE_WRITERS/NO_WRITE), frontmatter emit. เขียน code ให้ทำงานบน Python 3.12 ด้วย (CI ใช้ 3.12) ทั้งที่เครื่อง dev เป็น 3.14.",
+    "code-reviewer": "ระวังเรื่อง encoding: CI จงใจไม่ตั้ง PYTHONUTF8 เพราะบั๊กที่ test จับคือ Windows default encoding — อย่าแก้ test ให้ pass ด้วยการใส่ encoding= แบบ hardcoded ตรวจสอบด้วยว่า template ใหม่/แก้ไข ไม่มี trailing newline หรือ BOM แปลก ๆ และ frontmatter ที่ emit ต้อง valid กับ opencode ทั้ง V1 และ V2",
+    "test-engineer": "รัน: python3 -m unittest discover -s tests (47 tests, ~1.2s). CI รัน matrix ubuntu-latest + windows-latest, Python 3.12, จงใจไม่มี PYTHONUTF8. ไม่มี ruff/mypy/pytest ติดตั้ง — ถ้าแนะนำเครื่องมือใหม่ให้เพิ่มใน CI ด้วย. test ใหม่ควร append เข้า tests/test_render.py หรือเพิ่มไฟล์ test_*.md แล้ว discover จะเจอเอง.",
+    "product-manager": "Product คือ skill/port ที่เปลี่ยนทีม agent ของ Claude Code ให้ใช้กับ OpenCode ได้. ผู้ใช้หลักคือ dev ที่ใช้ OpenCode (V1 1.15.13 และ V2). คุณค่าหลัก: init ครั้งเดียวได้ทีม agents + commands + docs ที่ grounded กับโค้ดจริง. Backlog อยู่ที่ docs/product/BACKLOG.md.",
+    "bug-triager": "Repo นี้เป็น pure Python stdlib — บั๊กมักเป็น: encoding (Windows), template rendering, frontmatter validity, path handling (Windows backslash). reproduce ด้วย unittest ก่อนเสมอ.",
+    "architect": "Architecture แบ่งเป็น: templates/ (agents/commands/docs/partials — markdown + YAML frontmatter), scripts/render.py (renderer + --check validator), tests/, docs/. ข้อจำกัดสำคัญ: OpenCode subagent รันขนานไม่ได้ — coordination ต้องอยู่ใน slash commands ที่ main session รัน. V1 ใช้ permission: map, V2 ใช้ permissions: list (compat_v1 flag จัดการให้)",
+    "tech-writer": "README.md คือหน้าหลักของ GitHub repo (github.com/itsaraphapthanatka/opencode-agent-team). SKILL.md คือ entry point ที่ OpenCode skill loader อ่าน. reference/roles.md คือเอกสารภายในสำหรับ renderer. เขียนคู่มือเป็น bilingual ได้ถ้าจำเป็น แต่ report_language ของทีมคือ Thai."
+  }
+}
