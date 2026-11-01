@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 888 448" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="tileBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#151B2B"/>
+      <stop offset="1" stop-color="#090C14"/>
+    </linearGradient>
+    <linearGradient id="accentA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="0.55" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <radialGradient id="tileGlow" cx="0.5" cy="0.28" r="0.85">
+      <stop offset="0" stop-color="#2A3A5E" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#2A3A5E" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <clipPath id="tileClip"><rect x="0" y="0" width="256" height="256" rx="56"/></clipPath>
+  </defs>
+
+  <!-- board -->
+  <rect x="0" y="0" width="888" height="448" rx="22" fill="#F1F5F9"/>
+  <rect x="0.5" y="0.5" width="887" height="447" rx="21.5" fill="none" stroke="#E2E8F0"/>
+  <text x="444" y="44" text-anchor="middle" font-size="22" font-weight="700" fill="#0F172A">opencode-agent-team — logo options</text>
+  <text x="444" y="68" text-anchor="middle" font-size="14" fill="#64748B">Developer-tool aesthetic · app-icon tile · scales down to a favicon</text>
+
+  <!-- ================= A: Orchestration hub ================= -->
+  <g transform="translate(36,92)">
+    <g clip-path="url(#tileClip)">
+      <rect width="256" height="256" fill="url(#tileBg)"/>
+      <rect width="256" height="256" fill="url(#tileGlow)"/>
+    </g>
+    <!-- spokes -->
+    <g stroke="#38BDF8" stroke-opacity="0.4" stroke-width="3" stroke-linecap="round">
+      <line x1="128" y1="128" x2="128" y2="56"/>
+      <line x1="128" y1="128" x2="190.35" y2="92"/>
+      <line x1="128" y1="128" x2="190.35" y2="164"/>
+      <line x1="128" y1="128" x2="128" y2="200"/>
+      <line x1="128" y1="128" x2="65.65" y2="164"/>
+      <line x1="128" y1="128" x2="65.65" y2="92"/>
+    </g>
+    <!-- worker nodes -->
+    <g fill="#CBD5E1">
+      <circle cx="190.35" cy="92" r="11"/>
+      <circle cx="190.35" cy="164" r="11"/>
+      <circle cx="128" cy="200" r="11"/>
+      <circle cx="65.65" cy="164" r="11"/>
+      <circle cx="65.65" cy="92" r="11"/>
+    </g>
+    <!-- lead node (top) -->
+    <circle cx="128" cy="56" r="14" fill="url(#accentA)"/>
+    <!-- hub glow + hex -->
+    <circle cx="128" cy="128" r="30" fill="#3B82F6" opacity="0.35" filter="url(#soft)"/>
+    <polygon points="128,102 150.52,115 150.52,141 128,154 105.48,141 105.48,115" fill="url(#accentA)"/>
+    <circle cx="128" cy="128" r="6.5" fill="#F8FAFC" opacity="0.95"/>
+  </g>
+  <text x="164" y="384" text-anchor="middle" font-size="15" font-weight="600" fill="#0F172A">A · Orchestration</text>
+  <text x="164" y="404" text-anchor="middle" font-size="12" fill="#64748B">hub + agent ring</text>
+  <g transform="translate(118,416)">
+    <rect width="92" height="22" rx="11" fill="#DCFCE7"/>
+    <text x="46" y="15" text-anchor="middle" font-size="11" font-weight="700" fill="#15803D">Recommended</text>
+  </g>
+
+  <!-- ================= B: Org chart ================= -->
+  <g transform="translate(316,92)">
+    <g clip-path="url(#tileClip)">
+      <rect width="256" height="256" fill="url(#tileBg)"/>
+      <rect width="256" height="256" fill="url(#tileGlow)"/>
+    </g>
+    <!-- connectors -->
+    <g stroke="#38BDF8" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round">
+      <line x1="128" y1="86" x2="128" y2="120"/>
+      <line x1="72" y1="120" x2="184" y2="120"/>
+      <line x1="72" y1="120" x2="72" y2="150"/>
+      <line x1="128" y1="120" x2="128" y2="150"/>
+      <line x1="184" y1="120" x2="184" y2="150"/>
+    </g>
+    <!-- lead node -->
+    <circle cx="128" cy="70" r="20" fill="#3B82F6" opacity="0.35" filter="url(#soft)"/>
+    <circle cx="128" cy="70" r="17" fill="url(#accentA)"/>
+    <!-- child roles (tinted = diverse team) -->
+    <circle cx="72" cy="170" r="13" fill="#34D399"/>
+    <circle cx="128" cy="170" r="13" fill="#FBBF24"/>
+    <circle cx="184" cy="170" r="13" fill="#A78BFA"/>
+  </g>
+  <text x="444" y="384" text-anchor="middle" font-size="15" font-weight="600" fill="#0F172A">B · Org chart</text>
+  <text x="444" y="404" text-anchor="middle" font-size="12" fill="#64748B">manager → dev / test / review</text>
+
+  <!-- ================= C: Agent "A" monogram ================= -->
+  <g transform="translate(596,92)">
+    <g clip-path="url(#tileClip)">
+      <rect width="256" height="256" fill="url(#tileBg)"/>
+      <rect width="256" height="256" fill="url(#tileGlow)"/>
+    </g>
+    <!-- legs + crossbar of the letter A -->
+    <g stroke="url(#accentA)" stroke-width="5" stroke-linecap="round" fill="none">
+      <line x1="128" y1="58" x2="74" y2="198"/>
+      <line x1="128" y1="58" x2="182" y2="198"/>
+      <line x1="104" y1="120" x2="152" y2="120"/>
+    </g>
+    <!-- node dots -->
+    <circle cx="128" cy="58" r="14" fill="url(#accentA)"/>
+    <circle cx="74" cy="198" r="12" fill="#CBD5E1"/>
+    <circle cx="182" cy="198" r="12" fill="#CBD5E1"/>
+    <circle cx="104" cy="120" r="9" fill="#CBD5E1"/>
+    <circle cx="152" cy="120" r="9" fill="#CBD5E1"/>
+  </g>
+  <text x="724" y="384" text-anchor="middle" font-size="15" font-weight="600" fill="#0F172A">C · Agent monogram</text>
+  <text x="724" y="404" text-anchor="middle" font-size="12" fill="#64748B">"A" built from agents</text>
+</svg>
